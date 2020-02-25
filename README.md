@@ -5,7 +5,8 @@
 
 # 概要
   サッカー画像投稿アプリです。
-  ![Uploading スクリーンショット 2020-02-25 22.59.22.png…]()
+  <img width="1437" alt="スクリーンショット 2020-02-25 22 59 22" src="https://user-images.githubusercontent.com/59175719/75253734-8020ff80-5822-11ea-93ec-e3f6256f7ac1.png">
+
 
 # 本番環境 (デプロイ先 testアカウント&ID)
 
