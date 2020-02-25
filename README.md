@@ -1,24 +1,67 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリ名 
+  footballtweet
 
-Things you may want to cover:
+# 概要
+  サッカー画像投稿アプリです。
 
-* Ruby version
+# 本番環境 (デプロイ先 testアカウント&ID)
 
-* System dependencies
+# DEMO
+  工夫したポイント
+  1,コメント機能に非同期通信を取り入れた点
+  2,インクリメンタルサーチを実装し、tweetsテーブルのtextのカラムにインデックスを貼ることで、データの検索を高速化しました。
+  3,お気に入り機能の実装
+  4,フラッシュメッセージの実装
+  
+  使用技術
+  Ruby/Ruby on Rails/JavaScript/jQuery/MySQL/Github/Visual Studio Code
+  
+  課題や今後実装したい機能
+  画像複数枚投稿
+  マイページにアイコン設定
+  SNSログイン設定
+  新規会員登録時にお気に入りチームの設定
 
-* Configuration
 
-* Database creation
+# DB設計
 
-* Database initialization
 
-* How to run the test suite
+## usersテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
 
-* Deployment instructions
+### アソシエーション
 
-* ...
+- has_many :tweets
+- has_many :comments
+- has_many :liked_tweets
+
+## tweetsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|image|string|------|
+|user|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- has_many :commnets
+- has_many :liked_users
+
+## likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|foreign_key: true|
+|tweet|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :tweet
