@@ -28,7 +28,8 @@ $(function(){
       $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      alert('テキストを入力してください');
+      $('.form__submit').prop('disabled', false);
     })
   })
 });

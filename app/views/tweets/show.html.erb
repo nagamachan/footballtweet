@@ -22,9 +22,9 @@
     </span>
     <h3>いいね件数: <%= @tweet.likes.count %></h3>
       <% if current_user.already_liked?(@tweet) %>
-        <%= button_to 'いいねを取り消す', tweet_like_path(@tweet), method: :delete %>
+        <%= button_to 'いいねを取り消す💔', tweet_like_path(@tweet), method: :delete %>
       <% else %>
-        <%= button_to 'いいね', tweet_likes_path(@tweet) %>
+        <%= button_to 'いいね!!❤️', tweet_likes_path(@tweet) %>
       <% end %>
       <h2>いいねしたユーザー</h2>
       <% @tweet.liked_users.each do |user| %>
